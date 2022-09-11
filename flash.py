@@ -10,13 +10,9 @@ class Fire():
         self.rect.centerx = gun.rect.centerx
         self.rect.bottom = gun.rect.top
         #self.up_flash = upd
-        
-    
-    
-        
-
+      
+             
     def flash(self):
-              
         self.screen.blit(self.image, self.rect)
 
     def update_flash(self, gun):

@@ -11,7 +11,6 @@ class Gun(Sprite):
         self.screen = screen
         self.image = pygame.image.load('images/png-transparent-pixel-art-minigun-pixel-art-gun-angle-assault-rifle-weapon-thumbnail.png').convert()
         self.rect = self.image.get_rect()
-
         self.screen_rect = screen.get_rect()
         self.rect.centerx = self.screen_rect.centerx
         self.center = float(self.rect.centerx)

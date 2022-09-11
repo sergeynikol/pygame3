@@ -1,7 +1,5 @@
-
 import pygame, sys
 from bullet import Bullet
-
 from ino import Ino
 import time
 
@@ -60,9 +58,8 @@ def update_bullets(screen, stats, sc, inos, bullets):
     if len(inos) == 0:
         bullets.empty()
         create_army(screen, inos)
-        
-        
-
+      
+     
 def gun_kill(stats, screen, sc, gun, inos, bullets):
     """столкновение пушки и армии"""
     if stats.guns_left > 0:
