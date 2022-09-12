@@ -4,11 +4,12 @@ from ino import Ino
 import time
 
 
+
 pygame.init()
 s = pygame.mixer.Sound("soungs/vyistrel-pistoleta-magnum-357-36128.ogg")
 c = pygame.mixer.Sound("soungs/lukashenko-zhestochajshe.mp3")
 
-def events(screen, gun, bullets):
+def events(screen, gun, bullets, background_volume):
     """обработка нажатий клавиш"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -23,6 +24,8 @@ def events(screen, gun, bullets):
                 gun.rect.y += 10
                 bullets.add(new_bullet)
                 s.play()
+            elif event.key == pygame.K_UP:
+                background_volume + 0.1
                    
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
