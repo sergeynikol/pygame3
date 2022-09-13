@@ -1,5 +1,6 @@
 import pygame
 from pygame.sprite import Sprite
+from appSettins import IMG
 
 
 class Gun(Sprite):
@@ -9,7 +10,7 @@ class Gun(Sprite):
         """инициализация пушки"""
         super(Gun, self).__init__()
         self.screen = screen
-        self.image = pygame.image.load('images/png-transparent-pixel-art-minigun-pixel-art-gun-angle-assault-rifle-weapon-thumbnail.png').convert()
+        self.image = IMG[2]
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
         self.rect.centerx = self.screen_rect.centerx
@@ -45,7 +46,7 @@ class Ls(Sprite):
             """инициализация жизни"""
             super(Ls, self).__init__()
             self.screen = screen
-            self.image = pygame.image.load('images/heard.png')
+            self.image = IMG[3]
             self.rect = self.image.get_rect()
             self.screen_rect = screen.get_rect()
             

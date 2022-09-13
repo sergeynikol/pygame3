@@ -1,4 +1,4 @@
-import pygame, controls, setings
+import pygame, controls, appSettins
 from flash import Fire
 from gun import Gun
 from pygame.sprite import Group
@@ -9,12 +9,12 @@ from flash import Fire
 def run():
     pygame.init()
     pygame.mixer.init()
-    pygame.mixer.music.load("soungs/53341-lukashenko-menja-rasstreljali-na-vostochnoi-granic.mp3")
-    background_volume = setings.background_volume
+    appSettins.MUSIC["track1"]
+    pygame.mixer.music.set_volume(0.5)
     pygame.mixer.music.play()
-    screen = setings.screen 
+    screen = appSettins.screen 
     pygame.display.set_caption("Lukas Kill")
-    bg_color =  setings.bg_color
+    bg_color =  appSettins.bg_color
     gun = Gun(screen)
     flash_1 = Fire(screen, gun)
     bullets = Group()
@@ -24,7 +24,7 @@ def run():
     sc = Scores(screen, stats)
      
     while True:
-        controls.events(screen, gun, bullets, background_volume)
+        controls.events(screen, gun, bullets)
         if stats.run_game:
             gun.update_gun()
             flash_1.update_flash(gun)

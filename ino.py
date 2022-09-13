@@ -1,5 +1,6 @@
 import pygame
 import random
+from appSettins import IMG
 
 class Ino(pygame.sprite.Sprite):
     """класс одного лука"""
@@ -8,7 +9,7 @@ class Ino(pygame.sprite.Sprite):
         """инициализируем и задаем начальную позицию"""
         super(Ino, self).__init__()
         self.screen = screen
-        self.image = pygame.image.load('images/pixels.png').convert_alpha()
+        self.image = IMG[4]
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
         self.rect.x = self.rect.width

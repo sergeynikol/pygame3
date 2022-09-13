@@ -1,15 +1,12 @@
 import pygame, sys
+from appSettins import MUSIC
 from bullet import Bullet
 from ino import Ino
 import time
 
-
-
 pygame.init()
-s = pygame.mixer.Sound("soungs/vyistrel-pistoleta-magnum-357-36128.ogg")
-c = pygame.mixer.Sound("soungs/lukashenko-zhestochajshe.mp3")
 
-def events(screen, gun, bullets, background_volume):
+def events(screen, gun, bullets):
     """обработка нажатий клавиш"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -23,10 +20,8 @@ def events(screen, gun, bullets, background_volume):
                 new_bullet = Bullet(screen, gun)
                 gun.rect.y += 10
                 bullets.add(new_bullet)
-                s.play()
-            elif event.key == pygame.K_UP:
-                background_volume + 0.1
-                   
+                MUSIC["track2"].play()
+                  
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_RIGHT:
                 gun.mright = False
@@ -52,7 +47,7 @@ def update_bullets(screen, stats, sc, inos, bullets):
             bullets.remove(bullet)
     collisions = pygame.sprite.groupcollide(bullets, inos, True, True)
     if collisions:
-        c.play()
+        MUSIC["track3"].play()
         for inos in collisions.values():
             stats.score += 10 * len(inos)
         sc.image_score()
