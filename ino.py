@@ -26,13 +26,15 @@ class Ino(pygame.sprite.Sprite):
 
     def update(self):
         """перемещение луко"""
-        self.rect.y += random.randint(-1,1)
-        self.rect.x += random.randint(-4,4)
+        self.rect.y += random.randint(-1,2)
+        self.rect.x += random.randint(-5,5)
         
         if pygame.Rect.contains(self.screen_rect, self.rect):
             self.rect.y = self.rect.y 
             self.rect.x = self.rect.x
         else:
             self.rect.x = self.screen_rect.centerx
-            self.rect.y += 2
+            if self.rect.y != 600:
+                self.rect.y +=1
+            
 

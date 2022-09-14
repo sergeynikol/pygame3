@@ -46,7 +46,7 @@ class Ls(Sprite):
             """инициализация жизни"""
             super(Ls, self).__init__()
             self.screen = screen
-            self.image = IMG[3]
+            self.image = pygame.image.load('images/heard.png')
             self.rect = self.image.get_rect()
             self.screen_rect = screen.get_rect()
             

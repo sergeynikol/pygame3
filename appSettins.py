@@ -3,8 +3,6 @@ import configparser
 
 screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN) 
 bg_color = (0, 0, 0)
-
-
 """real shit code"""
 config = configparser.ConfigParser()  # создаём объекта парсера
 config.read("settings.ini")  # читаем конфиг
@@ -30,7 +28,7 @@ IMG = {
       }
 
 MUSIC = {
-    "track1": pygame.mixer.music.load("soungs/53341-lukashenko-menja-rasstreljali-na-vostochnoi-granic.mp3"),
-    "track2": pygame.mixer.Sound("soungs/vyistrel-pistoleta-magnum-357-36128.ogg"),
-    "track3": pygame.mixer.Sound("soungs/lukashenko-zhestochajshe.mp3"),
+    "track1": pygame.mixer.music.load("soungs/menja-rasstreljali.mp3"),
+    "track2": pygame.mixer.Sound("soungs/magnum.ogg"),
+    "track3": pygame.mixer.Sound("soungs/ghestochajshe.mp3"),
         }     

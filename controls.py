@@ -91,7 +91,8 @@ def create_army(screen, inos):
     """создание армии лука"""
     ino = Ino(screen)
     ino_width = ino.rect.width
-    number_ino_x = int((1300 - 2 * ino_width) / ino_width)
+    screen_width = screen.get_width()
+    number_ino_x = int((screen_width - 2 * ino_width) / ino_width)
     ino_height = ino.rect.height
     number_ino_y = int((400 - 100 - 2 * ino_height) / ino_height)
 
