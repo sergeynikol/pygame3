@@ -3,6 +3,7 @@ import configparser
 
 screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN) 
 bg_color = (0, 0, 0)
+muz = pygame.mixer.music
 """real shit code"""
 config = configparser.ConfigParser()  # создаём объекта парсера
 config.read("settings.ini")  # читаем конфиг
@@ -29,14 +30,17 @@ IMG = {
     4 : pygame.image.load('images/mob1.png').convert_alpha(),
     5 : pygame.image.load('images/autozak.jpeg').convert_alpha(),
     6 : pygame.image.load('images/flagi-belarus-pagonya.jpg').convert(),
+    7 : pygame.image.load('images/Play Rect.png'),
+    8 : pygame.image.load('images/Quit Rect.png'),
+    9 : pygame.image.load('images/flagi-belarus-pagonya.jpg'),
 
     }
 
 MUSIC = {
-    "track1": pygame.mixer.music.load("soungs/menja-rasstreljali.mp3"),
+    "track1": muz.load("soungs/menja-rasstreljali.mp3"),
     "track2": pygame.mixer.Sound("soungs/magnum.ogg"),
     "track3": pygame.mixer.Sound("soungs/ghestochajshe.mp3"),
-    "track4": pygame.mixer.music.load("soungs/menu_musick.mp3")
+    "track4": muz.load("soungs/menu_musick.mp3")
         }     
 
 def get_font(size): 
