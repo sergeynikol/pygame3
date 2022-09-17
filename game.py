@@ -12,7 +12,6 @@ from flash import Fire
     
 def run_game():
         pygame.init()
-        pygame.mixer.init()
         appSettins.MUSIC["track1"]
         pygame.mixer.music.play()
         pygame.mixer.music.set_volume(0.5)

@@ -1,7 +1,6 @@
 import pygame, sys
 from button import Button
 import appSettins
-import main
 
 
 pygame.init()
@@ -32,5 +31,5 @@ def options():
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
-                    main.run()
+                    import main
         pygame.display.update()
