@@ -1,24 +1,8 @@
 import pygame
-import configparser
 
 screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN) 
 bg_color = (0, 0, 0)
 muz = pygame.mixer.music
-"""real shit code"""
-config = configparser.ConfigParser()  # создаём объекта парсера
-config.read("settings.ini")  # читаем конфиг
-
-APP_CAPTION=config["Main"]["appCaption"]
-SCORE=config["Main"]["scoreFile"]
-
-TRACK_1=config["Music"]["track1"]
-TRACK_2=config["Music"]["track2"]
-TRACK_3=config["Music"]["track3"]
-
-FLASH_IMG=config["Img"]["flash"]
-GUN_IMG=config["Img"]["gun"]
-LIVE_IMG=config["Img"]["live"]
-PIXEL_IMG=config["Img"]["pixel"]
 
 pygame.mixer.init()
 
@@ -37,11 +21,11 @@ IMG = {
     }
 
 MUSIC = {
-    "track1": muz.load("soungs/menja-rasstreljali.mp3"),
+    "track1": "soungs/menja-rasstreljali.mp3",
     "track2": pygame.mixer.Sound("soungs/magnum.ogg"),
     "track3": pygame.mixer.Sound("soungs/ghestochajshe.mp3"),
-    "track4": muz.load("soungs/menu_musick.mp3")
-        }     
+    "track4": "soungs/menu_musick.mp3"
+        }
 
 def get_font(size): 
     """настройка шрифтов меню"""
