@@ -2,18 +2,13 @@ import pygame, sys
 from button import Button
 import appSettins
 
-
 pygame.init()
 SCREEN = appSettins.screen
-appSettins.MUSIC["track4"]
+pygame.mixer.music.load(appSettins.MUSIC["track4"])
 pygame.mixer.music.set_volume(0.1)
 pygame.mixer.music.play(-1)
-BG = appSettins.IMG[6]
+#BG = appSettins.IMG[6]
 
-
-
-
-    
 def options():
     while True:
         OPTIONS_MOUSE_POS = pygame.mouse.get_pos()
