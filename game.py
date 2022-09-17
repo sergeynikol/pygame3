@@ -12,10 +12,10 @@ from flash import Fire
     
 def run_game():
         pygame.init()
-        appSettins.MUSIC["track1"]
+        pygame.mixer.music.load(appSettins.MUSIC["track1"])
         pygame.mixer.music.play()
         pygame.mixer.music.set_volume(0.5)
-        
+
         screen = appSettins.screen 
         pygame.display.set_caption("Lukas Kill")
         bg_color =  appSettins.bg_color
@@ -26,8 +26,7 @@ def run_game():
         controls.create_army(screen, inos)
         stats = Stats()
         sc = Scores(screen, stats)
-        
-        
+
         while True:
             controls.events(screen, gun, bullets)
             if stats.run_game:
@@ -36,4 +35,4 @@ def run_game():
                 controls.update(bg_color, screen, stats, sc, gun, flash_1, inos, bullets)
                 controls.update_bullets(screen, stats, sc, inos, bullets)
                 controls.update_inos(stats, screen, sc, gun, inos, bullets)
-run_game()   
+run_game()

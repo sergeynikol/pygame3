@@ -4,11 +4,13 @@ import appSettins
 import options
 
 def run():
-    pygame.init()
-    appSettins.MUSIC["track4"]
-    pygame.mixer.music.set_volume(0.1)
-    pygame.mixer.music.play(-1)
+
+    #appSettins.MUSIC["track1"]
+    #pygame.init()
+    #pygame.mixer.music.set_volume(0.1)
+    #pygame.mixer.music.play(-1)
     BG = appSettins.IMG[6]
+
     screen_WIDTH = round(pygame.display.get_desktop_sizes()[0][0])
     screen_HEIGHT = round(pygame.display.get_desktop_sizes()[0][1])
     BG = pygame.transform.scale(BG, (screen_WIDTH, screen_HEIGHT))
@@ -36,8 +38,10 @@ def run():
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    import game
                     pygame.mixer.music.stop()
+                    pygame.mixer.music.unload()
+                    import game
+                   
                     False 
                 if OPTIONS_BUTTON.checkForInput(MENU_MOUSE_POS):
                     options.options()
